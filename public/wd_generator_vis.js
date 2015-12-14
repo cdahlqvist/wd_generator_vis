@@ -15,7 +15,7 @@ define(function (require) {
     // Vis object of this type.
     return new TemplateVisType({
       name: 'wd_generator',
-      title: 'WD Generator widget',
+      title: 'WD Generator',
       icon: 'fa-code',
       description: 'Used for initiating events on the WD generator.',
       template: require('plugins/wd_generator_vis/wd_generator_vis.html'),
