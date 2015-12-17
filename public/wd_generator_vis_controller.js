@@ -4,6 +4,7 @@ define(function (require) {
     $scope.vis.params.wd_generator.exploit_result = false;
     $scope.vis.params.wd_generator.server_failure_result = false;
     $scope.vis.params.wd_generator.dead_link_result = false;
+    $scope.vis.params.wd_generator.status = "";
 
     $scope.simulate = function(value) {
       var $req = $scope.vis.params.wd_generator.url + "/" + value;
@@ -16,6 +17,8 @@ define(function (require) {
           $scope.vis.params.wd_generator[$resp_var] = 'Failure';
         }
       });
+
+      $scope.vis.params.wd_generator.status = 'IT RAN!!';
     };
   });
 });

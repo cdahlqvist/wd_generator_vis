@@ -1,5 +1,5 @@
 <div ng-controller="KbnWdGeneratorVisController" class="wd_generator-vis">
-    {{vis.params.wd_generator.description}}<br />
+    {{vis.params.wd_generator.description}}<br /><br />
     
     <a id="server_failure" href="" ng-click="simulate('server_failure')">Simulate server failure</a>
     <div ng-show="vis.params.wd_generator.server_failure_result" class="ng-hide">{{vis.params.wd_generator.server_failure_result}}</div><br />
@@ -9,4 +9,6 @@
 
     <a id="dead_link" href="" ng-click="simulate('dead_link')">Simulate dead link</a>
     <div ng-show="vis.params.wd_generator.dead_link_result" class="ng-hide">{{vis.params.wd_generator.dead_link_result}}</div>
+
+    {{vis.params.wd_generator.status}}
 </div>
