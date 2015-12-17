@@ -1,15 +1,21 @@
 define(function (require) {
-  var marked = require('marked');
-  marked.setOptions({
-    gfm: true, // Github-flavored markdown
-    sanitize: true // Sanitize HTML tags
-  });
-
   var module = require('ui/modules').get('kibana/wd_generator_vis', ['kibana']);
   module.controller('KbnWdGeneratorVisController', function ($scope, $sce) {
-    $scope.$watch('vis.params.wd_generator', function (html) {
-      if (!html) return;
-      $scope.html = $sce.trustAsHtml(marked(html));
-    });
+    $scope.vis.params.wd_generator.exploit_result = false;
+    $scope.vis.params.wd_generator.server_failure_result = false;
+    $scope.vis.params.wd_generator.dead_link_result = false;
   });
+
+  $scope.simulate = function(value) {
+    var $req = $scope.vis.params.wd_generator.url + "/" + value;
+    var $resp_var = value + "_result";
+
+    $http.get($req).then(function(response) {
+      if(response.result == 'ok') {
+        $scope.vis.params.wd_generator[$resp_var] = 'Success';
+      } else {
+        $scope.vis.params.wd_generator[$resp_var] = 'Failure';
+      }
+    }
+  };
 });
