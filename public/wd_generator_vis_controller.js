@@ -16,7 +16,7 @@ define(function (require) {
       $http.get($req).then(function(response) {
         $scope.vis.params.wd_generator.stat = value + " actually ran!!";
 
-        if(response.result == 'ok') {
+        if(response.data.result == 'ok') {
           $scope.vis.params.wd_generator.result[value] = '(Success)';
         } else {
           $scope.vis.params.wd_generator.result[value] = '(Failure)';
