@@ -4,9 +4,11 @@ define(function (require) {
     $scope.vis.params.wd_generator.exploit_result = false;
     $scope.vis.params.wd_generator.server_failure_result = false;
     $scope.vis.params.wd_generator.dead_link_result = false;
-    $scope.vis.params.wd_generator.status = "";
+    $scope.vis.params.wd_generator.status = "Not executed...";
 
     $scope.simulate = function(value) {
+      $scope.vis.params.wd_generator.stat = value + " is about to run...";
+
       var $req = $scope.vis.params.wd_generator.url + "/" + value;
       var $resp_var = value + "_result";
 
@@ -16,9 +18,9 @@ define(function (require) {
         } else {
           $scope.vis.params.wd_generator[$resp_var] = 'Failure';
         }
-      });
 
-      $scope.vis.params.wd_generator.stat = value + " actually ran!!";
+        $scope.vis.params.wd_generator.stat = value + " actually ran!!";
+      });
     };
   });
 });
