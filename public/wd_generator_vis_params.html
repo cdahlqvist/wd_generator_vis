@@ -1,6 +1,10 @@
 <div class="wd_generator-vis-options form-group">
-  <label>Description</label>
-  <textarea ng-model="vis.params.wd_generator" class="form-control" rows="5" name='description'></textarea><br />
-  <label>WD Base URL</label>
-  <input type="text" ng-model="vis.params.wd_generator" class="form-control" name='url'/><br />
+  <div>
+    <label>Description</label>
+    <textarea ng-model="vis.params.wd_generator.description" class="form-control" rows="5"></textarea><br />
+  </div>
+  <div>
+    <label>WD Base URL</label>
+    <input type="text" ng-model="vis.params.wd_generator.url" class="form-control"/><br />
+  </div>
 </div>
