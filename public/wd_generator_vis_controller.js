@@ -18,7 +18,7 @@ define(function (require) {
         }
       });
 
-      $scope.vis.params.wd_generator.status = 'IT RAN!!';
+      $scope.vis.params.wd_generator.stat = value + " actually ran!!";
     };
   });
 });

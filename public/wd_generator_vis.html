@@ -4,11 +4,11 @@
     <a id="server_failure" href="" ng-click="simulate('server_failure')">Simulate server failure</a>
     <div ng-show="vis.params.wd_generator.server_failure_result" class="ng-hide">{{vis.params.wd_generator.server_failure_result}}</div><br />
 
-    <a id="exploit" href="" ng-click="simulate('exploit')">Simulate exploit</a>
+    <a id="exploit" href="" ng-click="$scope.simulate('exploit')">Simulate exploit</a>
     <div ng-show="vis.params.wd_generator.exploit_result" class="ng-hide">{{vis.params.wd_generator.exploit_result}}</div><br />
 
-    <a id="dead_link" href="" ng-click="simulate('dead_link')">Simulate dead link</a>
+    <a id="dead_link" href="" ng-click="$scope.simulate('dead_link')">Simulate dead link</a>
     <div ng-show="vis.params.wd_generator.dead_link_result" class="ng-hide">{{vis.params.wd_generator.dead_link_result}}</div>
 
-    {{vis.params.wd_generator.status}}
+    {{vis.params.wd_generator.stat}}
 </div>
