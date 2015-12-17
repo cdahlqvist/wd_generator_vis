@@ -16,6 +16,6 @@ define(function (require) {
       } else {
         $scope.vis.params.wd_generator[$resp_var] = 'Failure';
       }
-    }
+    });
   };
 });
