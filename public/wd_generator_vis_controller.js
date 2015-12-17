@@ -1,25 +1,28 @@
 define(function (require) {
   var module = require('ui/modules').get('kibana/wd_generator_vis', ['kibana']);
   module.controller('KbnWdGeneratorVisController', function ($scope, $sce) {
-    $scope.vis.params.wd_generator.exploit_result = false;
-    $scope.vis.params.wd_generator.server_failure_result = false;
-    $scope.vis.params.wd_generator.dead_link_result = false;
-    $scope.vis.params.wd_generator.status = "Not executed...";
+    $scope.vis.params.wd_generator.result.exploit = false;
+    $scope.vis.params.wd_generator.result.server_failure = false;
+    $scope.vis.params.wd_generator.result.dead_link = false;
+    $scope.vis.params.wd_generator.stat = "Not executed...";
 
     $scope.simulate = function(value) {
       $scope.vis.params.wd_generator.stat = value + " is about to run...";
 
+      vis.params.wd_generator.result[value] = "(Executing...)";
+
       var $req = $scope.vis.params.wd_generator.url + "/" + value;
-      var $resp_var = value + "_result";
 
       $http.get($req).then(function(response) {
+        $scope.vis.params.wd_generator.stat = value + " actually ran!!";
+
         if(response.result == 'ok') {
-          $scope.vis.params.wd_generator[$resp_var] = 'Success';
+          $scope.vis.params.wd_generator.result[value] = '(Success)';
         } else {
-          $scope.vis.params.wd_generator[$resp_var] = 'Failure';
+          $scope.vis.params.wd_generator.result[value] = '(Failure)';
         }
 
-        $scope.vis.params.wd_generator.stat = value + " actually ran!!";
+        $scope.vis.params.wd_generator.stat = value + " actually ran and all was updated!!";
       });
     };
   });

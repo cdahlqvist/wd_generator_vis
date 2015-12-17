@@ -2,13 +2,13 @@
     {{vis.params.wd_generator.description}}<br /><br />
     
     <a ng-href='' ng-click="simulate('server_failure')">Simulate server failure</a>
-    <div ng-show="vis.params.wd_generator.server_failure_result" class="ng-hide">{{vis.params.wd_generator.server_failure_result}}</div><br />
+    <div ng-show="vis.params.wd_generator.server_failure_result" class="ng-hide">{{vis.params.wd_generator.result.server_failure}}</div><br />
 
-    <a ng-href='' ng-click="$scope.simulate('exploit')">Simulate exploit</a>
-    <div ng-show="vis.params.wd_generator.exploit_result" class="ng-hide">{{vis.params.wd_generator.exploit_result}}</div><br />
+    <a ng-href='' ng-click="simulate('exploit')">Simulate exploit</a>
+    <div ng-show="vis.params.wd_generator.exploit_result" class="ng-hide">{{vis.params.wd_generator.result.exploit}}</div><br />
 
-    <a ng-href='' ng-click="$scope.simulate('dead_link')">Simulate dead link</a>
-    <div ng-show="vis.params.wd_generator.dead_link_result" class="ng-hide">{{vis.params.wd_generator.dead_link_result}}</div>
+    <a ng-href='' ng-click="simulate('dead_link')">Simulate dead link</a>
+    <div ng-show="vis.params.wd_generator.dead_link_result" class="ng-hide">{{vis.params.wd_generator.result.dead_link}}</div>
 
-    {{vis.params.wd_generator.stat}}
+    <br /><br />{{vis.params.wd_generator.stat}}
 </div>
