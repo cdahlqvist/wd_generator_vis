@@ -5,9 +5,9 @@ define(function (require) {
       params: {
         wd_generator: {
           result: {
-            server_failure: false,
-            exploit: false,
-            dead_link: false
+            server_failure: "[Not Initiated]",
+            exploit: "[Not Initiated]",
+            dead_link: "[Not Initiated]"
           }
         }
       }
@@ -26,9 +26,9 @@ define(function (require) {
         $scope.vis.params.wd_generator.stat = value + " actually ran!!";
 
         if(response.data.result == 'ok') {
-          $scope.vis.params.wd_generator.result[value] = '(Success)';
+          $scope.vis.params.wd_generator.result[value] = '[Success]';
         } else {
-          $scope.vis.params.wd_generator.result[value] = '(Failure)';
+          $scope.vis.params.wd_generator.result[value] = '[Failure]';
         }
 
         $scope.vis.params.wd_generator.stat = value + " actually ran and all was updated!!";
