@@ -16,7 +16,7 @@ define(function (require) {
     $scope.vis.params.wd_generator.stat = "Not executed...";
 
     $scope.simulate = function(value) {
-      $scope.vis.params.wd_generator.stat = value + " is about to run...";
+      $scope.vis.params.wd_generator.stat = value + " is about to run against " + $scope.vis.params.wd_generator.host;
 
       $scope.vis.params.wd_generator.result[value] = "(Executing...)";
 
