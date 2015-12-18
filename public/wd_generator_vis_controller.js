@@ -1,6 +1,13 @@
 define(function (require) {
   var module = require('ui/modules').get('kibana/wd_generator_vis', ['kibana']);
   module.controller('KbnWdGeneratorVisController', function ($scope, $sce) {
+    $scope.vis = {
+      params: {
+        wd_generator: {
+          result: {}
+        }
+      }
+    };
     $scope.vis.params.wd_generator.result.exploit = false;
     $scope.vis.params.wd_generator.result.server_failure = false;
     $scope.vis.params.wd_generator.result.dead_link = false;
