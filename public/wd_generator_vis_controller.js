@@ -4,6 +4,8 @@ define(function (require) {
     $scope.vis = {
       params: {
         wd_generator: {
+          description: "This is the default description.",
+          host: "http://127.0.0.1:8443",
           result: {
             server_failure: "[Not Initiated]",
             exploit: "[Not Initiated]",
@@ -18,7 +20,7 @@ define(function (require) {
     $scope.simulate = function(value) {
       $scope.vis.params.wd_generator.stat = value + " is about to run against " + $scope.vis.params.wd_generator.host;
 
-      $scope.vis.params.wd_generator.result[value] = "(Executing...)";
+      $scope.vis.params.wd_generator.result[value] = "[Executing...]";
 
       var req = $scope.vis.params.wd_generator.host + "/" + value;
 
