@@ -18,7 +18,7 @@ define(function (require) {
     $scope.simulate = function(value) {
       $scope.vis.params.wd_generator.stat = value + " is about to run...";
 
-      vis.params.wd_generator.result[value] = "(Executing...)";
+      $scope.vis.params.wd_generator.result[value] = "(Executing...)";
 
       var req = $scope.vis.params.wd_generator.host + "/" + value;
 
