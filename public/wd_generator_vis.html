@@ -1,4 +1,5 @@
 <div ng-controller="KbnWdGeneratorVisController" class="wd_generator-vis">
+    <div ng-bind-html="html"></div>
     {{vis.params.wd_generator.description}}<br /><br />
     
     <a href="" ng-click="simulate('server_failure')">Simulate server failure</a>
