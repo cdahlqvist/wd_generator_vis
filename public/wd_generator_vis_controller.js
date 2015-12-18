@@ -18,22 +18,18 @@ define(function (require) {
     $scope.vis.params.wd_generator.stat = "Not executed...";
 
     $scope.simulate = function(value) {
-      $scope.vis.params.wd_generator.stat = value + " is about to run against " + $scope.vis.params.wd_generator.host;
-
       $scope.vis.params.wd_generator.result[value] = "[Executing...]";
 
-      var req = $scope.vis.params.wd_generator.host + "/" + value;
+      var req = $scope.vis.params.wd_generator.host + "/" + value; 
 
-      $http.get(req).then(function(response) {
-        $scope.vis.params.wd_generator.stat = value + " actually ran!!";
+      $scope.vis.params.wd_generator.stat = value + " is about to run against " + req;
 
+      $http.get().then(function(response) {
         if(response.data.result == 'ok') {
           $scope.vis.params.wd_generator.result[value] = '[Success]';
         } else {
           $scope.vis.params.wd_generator.result[value] = '[Failure]';
         }
-
-        $scope.vis.params.wd_generator.stat = value + " actually ran and all was updated!!";
       });
     };
   });
