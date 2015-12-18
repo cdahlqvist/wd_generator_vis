@@ -4,13 +4,15 @@ define(function (require) {
     $scope.vis = {
       params: {
         wd_generator: {
-          result: {}
+          result: {
+            server_failure: false,
+            exploit: false,
+            dead_link: false
+          }
         }
       }
     };
-    $scope.vis.params.wd_generator.result.exploit = false;
-    $scope.vis.params.wd_generator.result.server_failure = false;
-    $scope.vis.params.wd_generator.result.dead_link = false;
+    
     $scope.vis.params.wd_generator.stat = "Not executed...";
 
     $scope.simulate = function(value) {
@@ -18,9 +20,9 @@ define(function (require) {
 
       vis.params.wd_generator.result[value] = "(Executing...)";
 
-      var $req = $scope.vis.params.wd_generator.url + "/" + value;
+      var req = $scope.vis.params.wd_generator.host + "/" + value;
 
-      $http.get($req).then(function(response) {
+      $http.get(req).then(function(response) {
         $scope.vis.params.wd_generator.stat = value + " actually ran!!";
 
         if(response.data.result == 'ok') {
